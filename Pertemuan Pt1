@@ -1,1 +1,32 @@
-https://www.programiz.com/online-compiler/4EGq7L3XTkucr
+// Online C compiler to run C program online
+#include <stdio.h>
+int wordHeads;
+int wordMinds;
+
+int main() {
+    printf("Enter number....");
+scanf("%d", & wordMinds);
+if(wordMinds == 10){
+    printf("Correct \n");
+}
+    else if(wordMinds >10){
+    printf("Too High \n");
+}
+    else if(wordMinds <10){
+    printf("Too low \n");
+}
+
+printf("Enter second pass...");
+scanf(" %d", &wordHeads);
+if(wordHeads != 0000 && wordHeads != 1111 ){
+    printf("Not Either \n");
+}
+    if(wordHeads == 0000){
+    printf("Not you \n");
+}
+    if(wordHeads == 1111){
+    printf("It's you \n");
+}
+    
+return 0;
+}
