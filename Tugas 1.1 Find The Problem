@@ -1,0 +1,16 @@
+#include <stdio.h>
+int angka;
+
+
+int main() {
+    printf("Masukan angka = ");
+    scanf("%d", &angka);
+    //format string kekurangan quote atas
+    if(angka > 10){
+        printf("adalah angka anda %d", angka);
+        // line 14 kurang menggunakan ;
+        return 0;
+}
+
+}
+//kurung kurawa terakhir belum ditambahkan sehingga int main belum dinyatakan selesai
