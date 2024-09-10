@@ -1,0 +1,27 @@
+#include <stdio.h>
+int d1 = 19;
+int month1 = 03;
+int year1 = 2009;
+int d, m, o;
+int hydro;
+
+int main() {
+printf("To verify, Enter your birthdate(DD/MM/YYYY):....");
+scanf("%d/%d/%d",&d,&m,&o);
+if(d == d1 && m == month1 && o == year1){
+printf("Correct \n");
+    printf("Enter Your Password (4 Digits) :...");
+    scanf(" %d", & hydro);
+    } if(hydro == 1111){
+        printf("Welcome, Taufiq ! \n");
+    } else {
+        printf("Not recognized. \n");
+    }
+if(d != 19 && m != 03 && o > 2009){
+    printf("vro's gen skibidi \n");
+}
+if(d != 19 && m != 03 && o < 2009){
+    printf("hlooo sepuhh \n");
+}
+return 0;
+}
