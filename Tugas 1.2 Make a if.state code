@@ -17,10 +17,10 @@ printf("Correct \n");
     } else {
         printf("Not recognized. \n");
     }
-if(d != 19 && m != 03 && o > 2009){
+if(o > 2009){
     printf("vro's gen skibidi \n");
 }
-if(d != 19 && m != 03 && o < 2009){
+if( o < 2009){
     printf("hlooo sepuhh \n");
 }
 return 0;
