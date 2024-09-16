@@ -1,79 +1,77 @@
-
-
 #include <stdio.h>
-float worddendro;
-float wordhydro;
-float wordpyro;
-float wordgeo;
-float wordelectro;
-float wordcryo;
-float wordlight;
-float worddark;
-float wordaether;
-float wordearth;
-float wordheaven;
-float wordbetween;
 float input;
 
 //celcius
 void ctokel (){
+    float worddendro;
     worddendro = input + 273;
     printf(" %.2f Kelvin =",worddendro);
 }
 void ctorea (){
+    float wordpyro;
     wordpyro =  (input * 4)/5;
     printf(" %.2f Reamur =",wordpyro);
 }
 void ctofahren (){
+    float wordhydro;
     wordhydro =  (9 * input)/5 + 32;
     printf(" %.2f Fahrenheit \n",wordhydro);
 }
 
 //reamur
 void reatokel (){
+    float wordcryo;
     wordcryo = (input * 5)/4 + 273;
     printf(" %.2f Kelvin =",wordcryo);
 }
 void reatocel (){
+    float wordgeo;
     wordgeo =  (input * 5)/4;
     printf(" %.2f Celcius =",wordgeo);
 }
 void reatofahren (){
+    float wordelectro;
     wordelectro =  (9 * input)/4 + 32;
     printf(" %.2f Fahrenheit \n",wordelectro);
 }
 
 //fahren
 void fahrentokel (){
+    float wordlight;
     wordlight = ((input - 32)*5)/9 + 273;
     printf(" %.2f Kelvin =",wordlight);
 }
 void fahrentocel (){
+    float worddark;
     worddark =  ((input - 32)*5)/9;
     printf(" %.2f Celcius =",worddark);
 }
 void fahrentorea (){
+    float wordaether;
     wordaether = ((input - 32)*4)/9;
     printf(" %.2f Reamur \n",wordaether);
 }
 
 //kelvin
 void keltocel (){
+    float wordheaven;
     wordheaven = input - 273;
     printf(" %.2f Celcius =",wordheaven);
 }
 void keltofahren (){
+    float wordearth;
     wordearth = ((input - 273)*9)/5 + 32 ;
     printf(" %.2f Fahrenheit =",wordearth);
 }
 void keltorea (){
+    float wordbetween;
     wordbetween = ((input - 273)*4)/5;
     printf(" %.2f Reamur \n",wordbetween);
 }
 
 
 int main() {
-    printf("insert number to convert ( from c ) =...");
+    printf("insert number to convert =...");
     scanf("%f", &input);
         printf(" %.2f Celcius =", input);
         ctokel ();
