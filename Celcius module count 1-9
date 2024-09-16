@@ -1,0 +1,41 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+int worddendro;
+int wordhydro;
+int wordpyro;
+
+
+void ctokel (){
+    worddendro = worddendro + 273;
+    printf(" %d Kelvin\n",worddendro);
+
+}
+void ctorea (){
+    wordpyro =  (wordpyro * 4)/5;
+    printf(" %d Reamur\n",wordpyro);
+   
+}
+void ctofahren (){
+    wordhydro =  (9 * wordhydro)/5 + 32;
+    printf(" %d Fahrenheit\n",wordhydro);
+    
+}
+
+int main() {
+    printf("insert number to convert ( from c ) =...");
+    scanf("%d", &worddendro,&wordhydro,&wordpyro);
+    
+    for(int i=1; i<=10;i++){
+        printf(" %d Celcius is", i);
+        int ok = i % 3;
+        if (ok == 1){
+        ctokel ();
+        }
+            else if (ok == 2){
+            ctorea ();
+            }
+                else {
+                ctofahren ();
+                }
+}
+}
