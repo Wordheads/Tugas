@@ -1,0 +1,19 @@
+#include <stdio.h>
+int worddendro;
+int wordhydro;
+
+void ctofahre (){
+    printf("insert number to convert ( from c ) =...");
+    scanf("%d", &worddendro);
+    worddendro = worddendro + 273;
+    printf("It's %d Kelvin \n", worddendro);
+    worddendro =  ((worddendro - 273) * 4)/5;
+    printf("It's %d Reamur \n",worddendro);
+    worddendro =  (9 * worddendro)/4 + 32;
+    printf("It's %d Fahrenheit",worddendro);
+}
+
+
+int main() {
+    ctofahre ();
+}
