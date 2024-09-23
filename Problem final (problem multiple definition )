@@ -75,6 +75,10 @@
 ADC_HandleTypeDef hadc1;
 
 /* USER CODE BEGIN PV */
+// by Brojol
+uint8_t menu;                 
+_Bool nSW1,nSW2,nSW3,nSW4;;   
+// by Brojol
 //	Variabel untuk buffer data pengiriman LCD
 char lcd_buffer[32];
 
@@ -120,7 +124,67 @@ void get_millis(void) {
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	int menu = 0;
+	
+
+  /* USER CODE END 1 */
+
+  /* MCU Configuration--------------------------------------------------------*/
+
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
+
+  /* USER CODE BEGIN Init */
+
+  /* USER CODE END Init */
+
+  /* Configure the system clock */
+  SystemClock_Config();
+
+  /* USER CODE BEGIN SysInit */
+
+  /* USER CODE END SysInit */
+
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  MX_ADC1_Init();
+  /* USER CODE BEGIN 2 */
+
+  //	Inisialisasi LED
+  RED(0);
+  GREEN(0);
+
+  //	Inisialisasi LCD
+  LCD_Init();
+  LCD_SetBacklight(1);
+
+  LCD_SetCursor(6, 1);
+    LCD_Print("TAUFIQ");
+    LCD_SetCursor(3, 2);
+    LCD_Print("KELAS X TE 2");
+    HAL_Delay(1000);
+    LCD_Clear();
+    LCD_SetCursor(5, 1);
+    LCD_Print("PELATIHAN");
+    LCD_SetCursor(9, 2);
+    LCD_Print("LKS");
+    HAL_Delay(1000);
+    LCD_Clear();
+    while (1)
+    {
+  	  if( SW2 ==1 ){
+  		  menu++;
+  	  }
+  	  if( SW1 ==1){
+  	  	  menu--;
+  	  }
+  	  if( SW3 ==1){
+  	  	  menu = menu+10;
+  	  }
+  	  if( SW4 ==1){
+  	 	  menu = menu-20;
+  	  }
+
+		//int menu = 0;
 		if(menu == 0 || menu <= 0){
 			HAL_Delay(500);
 			  LCD_SetCursor(0, 1);
@@ -194,63 +258,6 @@ int main(void)
 				  LCD_Print("06/02/2008");
 		}
 
-  /* USER CODE END 1 */
-
-  /* MCU Configuration--------------------------------------------------------*/
-
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
-
-  /* USER CODE BEGIN Init */
-
-  /* USER CODE END Init */
-
-  /* Configure the system clock */
-  SystemClock_Config();
-
-  /* USER CODE BEGIN SysInit */
-
-  /* USER CODE END SysInit */
-
-  /* Initialize all configured peripherals */
-  MX_GPIO_Init();
-  MX_ADC1_Init();
-  /* USER CODE BEGIN 2 */
-
-  //	Inisialisasi LED
-  RED(0);
-  GREEN(0);
-
-  //	Inisialisasi LCD
-  LCD_Init();
-  LCD_SetBacklight(1);
-
-  LCD_SetCursor(6, 1);
-    LCD_Print("TAUFIQ");
-    LCD_SetCursor(3, 2);
-    LCD_Print("KELAS X TE 2");
-    HAL_Delay(1000);
-    LCD_Clear();
-    LCD_SetCursor(5, 1);
-    LCD_Print("PELATIHAN");
-    LCD_SetCursor(9, 2);
-    LCD_Print("LKS");
-    HAL_Delay(1000);
-    LCD_Clear();
-    while (1)
-    {
-  	  if( SW2 ==1 ){
-  		  menu++;
-  	  }
-  	  if( SW1 ==1){
-  	  	  menu--;
-  	  }
-  	  if( SW3 ==1){
-  	  	  menu = menu+10;
-  	  }
-  	  if( SW4 ==1){
-  	 	  menu = menu-20;
-  	  }
     }
   }
     /* USER CODE END WHILE */
