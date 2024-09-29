@@ -75,6 +75,7 @@
 ADC_HandleTypeDef hadc1;
 
 /* USER CODE BEGIN PV */
+uint8_t menu;
 //	Variabel untuk buffer data pengiriman LCD
 char lcd_buffer[32];
 
@@ -120,81 +121,8 @@ void get_millis(void) {
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	int menu = 0;
-		if(menu == 0 || menu <= 0){
-			HAL_Delay(500);
-			  LCD_SetCursor(0, 1);
-			  LCD_Print("1.Ali");
-		}
-		if(menu == 1){
-			HAL_Delay(500);
-			  LCD_SetCursor(0, 1);
-			  LCD_Print("2.Taufiq");
-		}
-		if(menu == 2){
-			HAL_Delay(500);
-			  LCD_SetCursor(0, 1);
-			  LCD_Print("3.Sharon");
-		}
-		if(menu == 3){
-			HAL_Delay(500);
-			  LCD_SetCursor(0, 1);
-			  LCD_Print("4.Althaf");
-		}
-		if(menu == 4){
-				HAL_Delay(500);
-				  LCD_SetCursor(0, 1);
-				  LCD_Print("5.Arya");
-		}
-		if(menu == 5){
-				HAL_Delay(500);
-				  LCD_SetCursor(0, 1);
-				  LCD_Print("6.Naila");
-		}
-		if(menu == 10){
-			HAL_Delay(500);
-			 LCD_SetCursor(0, 1);
-			  LCD_Print("FAHRI ALI");
-			  LCD_SetCursor(0, 2);
-			  LCD_Print("17/03/2009");
-		}
-		if(menu == 11){
-			HAL_Delay(500);
-			 LCD_SetCursor(0, 1);
-			  LCD_Print("TAUFIQ ALHAKIM");
-			  LCD_SetCursor(0, 2);
-			  LCD_Print("19/03/2009");
-		}
-		if(menu == 12){
-			HAL_Delay(500);
-			 LCD_SetCursor(0, 1);
-			  LCD_Print("SHARON STEFHANIE");
-			  LCD_SetCursor(0, 2);
-			  LCD_Print("18/11/2006");
-		}
-		if(menu == 13){
-				HAL_Delay(500);
-				 LCD_SetCursor(0, 1);
-				  LCD_Print("ALTHAF RASYA W");
-				  LCD_SetCursor(0, 2);
-				  LCD_Print("24/12/2007");
-		}
-		if(menu == 15){
-				HAL_Delay(500);
-				 LCD_SetCursor(0, 1);
-				  LCD_Print("NAILA AYU S.");
-				  LCD_SetCursor(0, 2);
-				  LCD_Print("09/01/2008");
-		}
-		if(menu == 14){
-				HAL_Delay(500);
-				 LCD_SetCursor(0, 1);
-				  LCD_Print("AGA ARYA");
-				  LCD_SetCursor(0, 2);
-				  LCD_Print("06/02/2008");
-		}
 
-  /* USER CODE END 1 */
+	/*DE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
 
@@ -233,10 +161,13 @@ int main(void)
     LCD_Clear();
     LCD_SetCursor(5, 1);
     LCD_Print("PELATIHAN");
-    LCD_SetCursor(9, 2);
+    LCD_SetCursor(7, 2);
     LCD_Print("LKS");
     HAL_Delay(1000);
     LCD_Clear();
+    LCD_SetCursor(7,0);
+    LCD_Print("PESERTA");
+
     while (1)
     {
   	  if( SW2 ==1 ){
@@ -250,7 +181,131 @@ int main(void)
   	  }
   	  if( SW4 ==1){
   	 	  menu = menu-20;
+  	 	  LCD_SetCursor(0,1);
+          LCD_Print("                      ");
+  	 	  LCD_SetCursor(0,2);
+  	      LCD_Print("                      ");
+  	      menu++;
+
   	  }
+  	if(menu == 0 ){
+  		LCD_SetCursor(7,0);
+  		    LCD_Print("PESERTA");
+  			HAL_Delay(300);
+  			  LCD_SetCursor(0, 1);
+  			  LCD_Print("1.Ali");
+  			RED(1);
+  			GREEN(0);
+  		}
+  		if(menu == 1){
+  			LCD_SetCursor(7,0);
+  			    LCD_Print("PESERTA");
+  			HAL_Delay(300);
+  			  LCD_SetCursor(0, 1);
+  			  LCD_Print("2.Taufiq");
+  			  RED(0);
+  			  GREEN(1);
+  		}
+  		if(menu == 2){
+  			LCD_SetCursor(7,0);
+  			    LCD_Print("PESERTA");
+  			HAL_Delay(300);
+  			  LCD_SetCursor(0, 1);
+  			  LCD_Print("3.Sharon");
+  			RED(1);
+  			GREEN(0);
+  		}
+  		if(menu == 3){
+  			LCD_SetCursor(7,0);
+  			    LCD_Print("PESERTA");
+  			HAL_Delay(300);
+  			  LCD_SetCursor(0, 1);
+  			  LCD_Print("4.Althaf");
+    			RED(0);
+    			GREEN(1);
+
+  		}
+  		if(menu == 4){
+  			LCD_SetCursor(7,0);
+  			    LCD_Print("PESERTA");
+  				HAL_Delay(300);
+  				  LCD_SetCursor(0, 1);
+  				  LCD_Print("5.Arya   ");
+  	  			RED(1);
+  	  			GREEN(0);
+  		}
+  		if(menu == 5){
+  			LCD_SetCursor(7,0);
+  			    LCD_Print("PESERTA");
+  				HAL_Delay(300);
+  				  LCD_SetCursor(0, 1);
+  				  LCD_Print("6.Naila  ");
+  	  			RED(0);
+  	  			GREEN(1);
+  		}
+  		if(menu == 10){
+  			HAL_Delay(300);
+  			 LCD_SetCursor(0, 1);
+  			  LCD_Print("FAHRI ALI    ");
+  			  LCD_SetCursor(0, 2);
+  			  LCD_Print("17/03/2009");
+  			HAL_Delay(2000);
+  				  	LCD_Clear();
+  				  	menu = 0;
+  		}
+  		if(menu == 11){
+  			HAL_Delay(300);
+  			 LCD_SetCursor(0, 1);
+  			  LCD_Print("TAUFIQ ALHAKIM    ");
+  			  LCD_SetCursor(0, 2);
+  			  LCD_Print("19/03/2009");
+  			HAL_Delay(2000);
+  				  	LCD_Clear();
+  				  	menu = 1;
+  		}
+  		if(menu == 12){
+  			    HAL_Delay(300);
+  				 LCD_SetCursor(0, 1);
+  				  LCD_Print("SHARON STEFHANIE");
+  				  LCD_SetCursor(0, 2);
+  				  LCD_Print("18/11/2006");
+  				HAL_Delay(2000);
+  					  	LCD_Clear();
+  					  	menu = 2;
+  		}
+  		if(menu == 13){
+  				HAL_Delay(300);
+  				 LCD_SetCursor(0, 1);
+  				  LCD_Print("ALTHAF RASYA W    ");
+  				  LCD_SetCursor(0, 2);
+  				  LCD_Print("24/12/2007");
+  				HAL_Delay(2000);
+  					  	LCD_Clear();
+  					  	menu = 3;
+  		}
+  		if(menu == 14){
+  		  		HAL_Delay(300);
+  		  		 LCD_SetCursor(0, 1);
+  				  LCD_Print("AGA ARYA       ");
+  				  LCD_SetCursor(0, 2);
+  		  		  LCD_Print("06/02/2008");
+  		  		HAL_Delay(2000);
+  		  			  	LCD_Clear();
+  		  			  	menu = 4;
+  		}
+  		if(menu == 15){
+  				HAL_Delay(300);
+  				 LCD_SetCursor(0, 1);
+  				  LCD_Print("NAILA AYU S.      ");
+  				  LCD_SetCursor(0, 2);
+  				  LCD_Print("09/01/2008");
+  				HAL_Delay(2000);
+  				  		  			  	LCD_Clear();
+  				  		  			  	menu = 5;
+  		}
+  		if(menu > 15){
+  		menu = 0;
+  		}
     }
   }
     /* USER CODE END WHILE */
